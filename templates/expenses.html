@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Expense History</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#f4f7fc;
+    padding:30px;
+}
+
+.container{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+h1{
+    margin-bottom:20px;
+    color:#2563eb;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#2563eb;
+    color:white;
+}
+
+th,td{
+    padding:12px;
+    border:1px solid #ddd;
+    text-align:center;
+}
+
+.back-btn{
+    display:inline-block;
+    margin-bottom:20px;
+    padding:10px 15px;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<a href="/dashboard" class="back-btn">
+← Back to Dashboard
+</a>
+
+<div class="container">
+
+<h1>💸 Expense History</h1>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Category</th>
+<th>Amount</th>
+<th>Date</th>
+<th>Action</th>
+</tr>
+
+{% for expense in expenses %}
+<tr>
+
+<td>{{ expense[0] }}</td>
+<td>{{ expense[1] }}</td>
+<td>₹{{ expense[2] }}</td>
+<td>{{ expense[3] }}</td>
+
+<td>
+
+<a href="/delete_expense/{{ expense[0] }}">
+
+<button style="
+background:#ef4444;
+color:white;
+border:none;
+padding:8px 12px;
+border-radius:5px;
+cursor:pointer;
+">
+
+Delete
+
+</button>
+
+</a>
+
+</td>
+
+</tr>
+
+<td>
+<a href="/delete_expense/{{ expense[0] }}">
+<button style="
+background:red;
+color:white;
+border:none;
+padding:8px 12px;
+border-radius:5px;
+cursor:pointer;
+">
+Delete
+</button>
+</a>
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>

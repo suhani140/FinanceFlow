@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FinanceFlow Login</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#eff6ff,#f8fafc,#dbeafe);
+overflow:hidden;
+}
+
+.circle{
+position:absolute;
+border-radius:50%;
+background:rgba(37,99,235,0.1);
+}
+
+.c1{
+width:250px;
+height:250px;
+top:60px;
+left:100px;
+}
+
+.c2{
+width:180px;
+height:180px;
+bottom:60px;
+right:120px;
+}
+
+.container{
+width:1000px;
+height:600px;
+background:white;
+border-radius:30px;
+overflow:hidden;
+display:flex;
+box-shadow:0 20px 40px rgba(0,0,0,0.1);
+position:relative;
+z-index:1;
+}
+
+.left{
+flex:1;
+background:linear-gradient(135deg,#2563eb,#60a5fa);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:white;
+padding:50px;
+}
+
+.left .icon{
+font-size:140px;
+margin-bottom:20px;
+}
+
+.left h1{
+font-size:42px;
+margin-bottom:20px;
+}
+
+.left p{
+font-size:18px;
+text-align:center;
+line-height:1.8;
+}
+
+.right{
+flex:1;
+padding:60px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.right h2{
+font-size:34px;
+color:#1e293b;
+margin-bottom:10px;
+}
+
+.right p{
+color:#64748b;
+margin-bottom:25px;
+}
+
+.input-box{
+margin-bottom:18px;
+}
+
+.input-box input{
+width:100%;
+padding:15px;
+border:1px solid #cbd5e1;
+border-radius:12px;
+font-size:15px;
+}
+
+.input-box input:focus{
+outline:none;
+border-color:#2563eb;
+}
+
+.options{
+display:flex;
+justify-content:space-between;
+margin-bottom:20px;
+font-size:14px;
+color:#64748b;
+}
+
+button{
+width:100%;
+padding:15px;
+border:none;
+border-radius:12px;
+background:#2563eb;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1d4ed8;
+}
+
+.signup-link{
+text-align:center;
+margin-top:20px;
+}
+
+.signup-link a{
+color:#2563eb;
+text-decoration:none;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+
+<div class="container">
+
+<div class="left">
+
+<div class="icon">📊</div>
+
+<h1>FinanceFlow</h1>
+
+<p>
+Monitor expenses, manage income,
+track savings and achieve your
+financial goals smarter.
+</p>
+
+</div>
+
+<div class="right">
+
+<h2>Welcome Back</h2>
+
+<p>Login to continue</p>
+
+<form action="/check_login" method="POST">
+
+<div class="input-box">
+<input type="email" name="email" placeholder="Email Address" required>
+</div>
+
+<div class="input-box">
+<input type="password" name="password" placeholder="Password" required>
+</div>
+
+<div class="options">
+<span>Remember Me</span>
+<span>Forgot Password?</span>
+</div>
+
+<button type="submit">
+Login
+</button>
+
+</form>
+
+<div class="signup-link">
+Don't have an account?
+<a href="/signup">Create Account</a>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
